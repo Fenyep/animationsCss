@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.btn {
+  background-color: rgba(1, 28, 55, 0);
+  color: #15dea5;
+  font-size: 3rem;
+  cursor: pointer;
+  padding: 1.85rem 3rem;
+  border: 3px solid rgb(1, 28, 55);
+  border-radius: 10rem;
+  transform: scale(1);
+  transition: all 450ms;
+}
+
+.btn:hover {
+  background-color: rgba(1, 28, 55, 1);
+  transform: scale(1.15);
+}

@@ -1,0 +1,79 @@
+.lightsaber .hilt {
+  cursor: pointer;
+  width: 15px;
+  height: 50px;
+  border-bottom: solid 4px grey;
+  border-top: solid 5px grey;
+  border-radius: 5px;
+  z-index: 1;
+  background: #e2e2e2;
+  background: -webkit-gradient(linear, left top, right top, from(#e2e2e2), color-stop(50%, #dbdbdb), color-stop(51%, #d1d1d1), to(#fefefe));
+  background: linear-gradient(to right, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
+}
+
+.lightsaber .hilt > .switch {
+  background: #b94a37;
+  width: 3px;
+  height: 10px;
+  position: absolute;
+  bottom: 25px;
+  left: 13px;
+  border-radius: 10px;
+}
+
+.lightsaber .hilt:active + .plasma {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+
+.lightsaber .hilt:active > .switch {
+  -webkit-transform: scale(0.7, 1);
+          transform: scale(0.7, 1);
+}
+
+.lightsaber .plasma {
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
+  border-radius: 12px 12px 0 0;
+  position: absolute;
+  bottom: 45px;
+  left: 2px;
+  width: 10px;
+  display: block;
+  -webkit-transform: scale(1, 0);
+          transform: scale(1, 0);
+  height: 250px;
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center;
+  z-index: -1;
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
+}
+
+.vader {
+  background: -webkit-gradient(linear, left top, right top, from(#e51115), color-stop(30%, #fefefe), color-stop(47%, #fefefe), color-stop(71%, #fefefe), to(#e51115));
+  background: linear-gradient(to right, #e51115 0%, #fefefe 30%, #fefefe 47%, #fefefe 71%, #e51115 100%);
+  -webkit-box-shadow: 0 0 10px #e51115;
+          box-shadow: 0 0 10px #e51115;
+}
+
+body {
+  background: #333;
+}
+
+.lightsaber-example {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 325px;
+}
+
+.lightsaber {
+  position: relative;
+}
+/*# sourceMappingURL=style.css.map */

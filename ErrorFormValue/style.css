@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: rgb(237, 246, 247);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form .form__group input {
+  border: 2px solid #fff;
+  border-radius: 100rem;
+  color: #6300a0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  outline: none;
+  padding: 0.5rem 1.5rem;
+  width: 100%;
+  transition: background-color 500ms;
+}
+
+.form .form__group input:focus {
+  border: 2px solid #6300a0;
+}
+
+/*Le clignotement entre l’effet  :focus  et l’effet  :invalid  est assez désagréable à l’œil. 
+**Pour affiner tout ça, nous pouvons utiliser la pseudoclasse  :not(), 
+***combinée à la pseudoclasse  :focus, afin de s’assurer que l’utilisateur a terminé de renseigner son adresse e-mail avant de lui faire un feedback de validation.*/
+.form .form__group input:not(:focus):invalid {
+  background: #b20a37;
+  border: 2px solid #b20a37;
+  color: #fff;
+}
+
+.btn {
+  background: orange;
+  font-size: 3rem;
+  cursor: pointer;
+  padding: 1.85rem 3rem;
+  border-radius: 10rem;
+}
+
+.btn:active + .ball{
+  transform: scale(1.0);
+}
+
+.ball {
+  width: 300px;
+  height: 300px;
+  background: green;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  transform: scale(0.1);
+  transition: transform 4000ms;
+}

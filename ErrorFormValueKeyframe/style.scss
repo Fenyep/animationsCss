@@ -1,0 +1,62 @@
+$cd-txt: #6300a0;
+$cd-txt--invalid: #fff;
+$cd-danger: #b20a37;
+$shake-intensity: 1%;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: rgb(237, 246, 247);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form {
+  & .form__group {
+    & input {
+      border: 2px solid $cd-txt--invalid;
+      border-radius: 100rem;
+      color: $cd-txt;
+      font-family: "Montserrat", sans-serif;
+      font-size: 2.5rem;
+      outline: none;
+      padding: 0.5rem 1.5rem;
+      width: 100%;
+      &:focus {
+        border: 2px solid $cd-txt;
+      }
+      /*Le clignotement entre l’effet  :focus  et l’effet  :invalid  est assez désagréable à l’œil. 
+                **Pour affiner tout ça, nous pouvons utiliser la pseudoclasse  :not(), 
+                ***combinée à la pseudoclasse  :focus, afin de s’assurer que l’utilisateur a terminé de renseigner son adresse e-mail avant de lui faire un feedback de validation.*/
+      &:not(:focus):invalid {
+        background: $cd-danger;
+        border: 2px solid $cd-danger;
+        color: $cd-txt--invalid;
+        animation: headshake 100ms cubic-bezier(.4, .1, .6, .9) 2;
+      }
+    }
+  }
+}
+
+@keyframes headshake {
+    25% {
+        // Entierement a droite
+        transform: translateX($shake-intensity);
+    }
+    75% {
+        // Entierement a gauche
+        transform: translateX($shake-intensity * -1);
+    }
+}

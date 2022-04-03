@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.btn {
+  background: #011c37;
+  color: #15dea5;
+  font-size: 3rem;
+  cursor: pointer;
+  padding: 1.85rem 3rem;
+  border-radius: 10rem;
+  transform: scale(1);
+  transition: transform 400ms;
+}
+
+.btn:active {
+  background: red;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  transform: scale(1.15);
+}
